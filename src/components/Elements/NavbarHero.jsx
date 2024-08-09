@@ -1,13 +1,13 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 import { useCart } from "./CartContext";
 
 const NavbarHero = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { getCartCount } = useCart(); // Use named import
+  const { getCartCount } = useCart();
   const [cartCount, setCartCount] = useState(getCartCount());
-  const location = useLocation(); // Hook to get current location
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -21,7 +21,6 @@ const NavbarHero = () => {
     handleCartUpdate();
   }, [getCartCount]);
 
-  // Function to determine if a link is active
   const isActive = (path) => location.pathname === path;
 
   return (
@@ -94,6 +93,14 @@ const NavbarHero = () => {
           <li>
             <Link to="/contact" className={`block px-4 py-2 hover:bg-gray-200 ${isActive("/contact") ? "text-pink-500" : ""}`} onClick={() => setIsOpen(false)}>
               Contact
+            </Link>
+          </li>
+          {/* Cart Icon in Mobile Menu */}
+          <li className="mt-4 flex items-center mb-2">
+            <Link to="/cart" className="flex items-center text-pink-500 hover:text-pink-700">
+              <FaShoppingCart size={24} />
+              {cartCount > 0 && <span className="ml-2 bg-red-600 text-white text-xs font-bold rounded-full px-2 py-1">{cartCount}</span>}
+              <span className="ml-2 text-sm font-medium">Cart</span>
             </Link>
           </li>
         </ul>
