@@ -15,13 +15,13 @@ const Contact = () => {
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                 Name
               </label>
-              <input type="text" id="name" name="name" className="block w-full border border-pink-300 rounded-md shadow-sm focus:border-pink-500 focus:ring focus:ring-pink-500 focus:ring-opacity-50" required />
+              <input type="text" id="name" name="name" className="block w-full border border-pink-300 py-2 rounded-md shadow-sm focus:border-pink-500 focus:ring focus:ring-pink-500 focus:ring-opacity-50" required />
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
                 Email
               </label>
-              <input type="email" id="email" name="email" className="block w-full border border-pink-300 rounded-md shadow-sm focus:border-pink-500 focus:ring focus:ring-pink-500 focus:ring-opacity-50" required />
+              <input type="email" id="email" name="email" className="block w-full border border-pink-300 py-2 rounded-md shadow-sm focus:border-pink-500 focus:ring focus:ring-pink-500 focus:ring-opacity-50" required />
             </div>
           </div>
           <div className="mb-6">
