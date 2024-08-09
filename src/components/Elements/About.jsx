@@ -13,11 +13,11 @@ const AboutUs = () => {
 
           {/* Description */}
           <div className="md:w-1/2 flex flex-col items-center md:items-start">
-            <p className="text-lg md:text-xl mb-4 text-gray-800">
+            <p className="text-lg text-center md:text-left md:text-xl mb-4 text-gray-800">
               At DarkMoon, our mission is to bring you the best shopping experience. We are dedicated to offering high-quality products and exceptional customer service. Our team works tirelessly to ensure that every product meets our
               rigorous standards and that your experience with us is nothing short of excellent.
             </p>
-            <p className="text-lg md:text-xl mb-6 text-gray-800">
+            <p className="text-lg text-center md:text-left md:text-xl mb-6 text-gray-800">
               Founded in 2024, LightMoon has quickly established itself as a leading retailer in the industry. We pride ourselves on our commitment to innovation, sustainability, and customer satisfaction.
             </p>
 

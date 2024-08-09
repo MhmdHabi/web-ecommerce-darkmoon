@@ -16,7 +16,7 @@ const HeroSectionPage = () => {
             <h2 className="text-4xl md:text-6xl font-semibold text-pink-500">Online</h2>
             <h2 className="text-4xl md:text-6xl font-semibold mb-4 text-pink-500">Shopping</h2>
             <p className="text-lg md:text-2xl mb-4">Discover our amazing products and services</p>
-            <p className="text-lg md:text-2xl mb-6">
+            <p className="text-lg md:text-2xl mb-6 text-center md:text-left">
               Discover a world of exclusive deals and premium products crafted just for you. Shop our top-rated items and elevate your experience with quality and style. Enjoy seamless shopping and unbeatable offers tailored to your needs.
             </p>
 

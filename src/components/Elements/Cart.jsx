@@ -42,7 +42,7 @@ const CartPage = () => {
               </div>
               <div className="px-6 py-4 flex flex-col justify-between flex-grow">
                 <div className="font-bold text-xl mb-2">{item.title}</div>
-                <p className="text-gray-700 text-base mb-2">{item.description}</p>
+                <p className="text-gray-700 text-base mb-2 line-clamp-3">{item.description}</p>
                 <div className="flex justify-between items-center">
                   <span className="text-gray-900 text-sm font-bold">${item.price.toFixed(2)}</span>
                   <div className="flex items-center">

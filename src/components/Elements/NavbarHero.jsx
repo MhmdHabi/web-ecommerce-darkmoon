@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { FaBars, FaTimes, FaShoppingCart } from "react-icons/fa";
 import { useCart } from "./CartContext";
 
@@ -7,6 +7,7 @@ const NavbarHero = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { getCartCount } = useCart(); // Use named import
   const [cartCount, setCartCount] = useState(getCartCount());
+  const location = useLocation(); // Hook to get current location
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -19,6 +20,9 @@ const NavbarHero = () => {
 
     handleCartUpdate();
   }, [getCartCount]);
+
+  // Function to determine if a link is active
+  const isActive = (path) => location.pathname === path;
 
   return (
     <div>
@@ -33,19 +37,19 @@ const NavbarHero = () => {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex flex-grow justify-center items-center space-x-8">
-          <Link to="/" className="hover:text-pink-500 uppercase text-sm font-semibold">
+          <Link to="/" className={`hover:text-pink-500 uppercase text-sm font-semibold ${isActive("/") ? "text-pink-500" : ""}`}>
             Home
           </Link>
-          <Link to="/products" className="hover:text-pink-500 uppercase text-sm font-semibold">
+          <Link to="/products" className={`hover:text-pink-500 uppercase text-sm font-semibold ${isActive("/products") ? "text-pink-500" : ""}`}>
             Products
           </Link>
-          <Link to="/about-us" className="hover:text-pink-500 uppercase text-sm font-semibold">
+          <Link to="/about-us" className={`hover:text-pink-500 uppercase text-sm font-semibold ${isActive("/about-us") ? "text-pink-500" : ""}`}>
             About Us
           </Link>
-          <Link to="/trending" className="hover:text-pink-500 uppercase text-sm font-semibold">
+          <Link to="/trending" className={`hover:text-pink-500 uppercase text-sm font-semibold ${isActive("/trending") ? "text-pink-500" : ""}`}>
             Trending
           </Link>
-          <Link to="/contact" className="hover:text-pink-500 uppercase text-sm font-semibold">
+          <Link to="/contact" className={`hover:text-pink-500 uppercase text-sm font-semibold ${isActive("/contact") ? "text-pink-500" : ""}`}>
             Contact
           </Link>
         </div>
@@ -68,27 +72,27 @@ const NavbarHero = () => {
       <div className={`fixed top-3 left-0 w-full bg-white text-black transition-transform duration-300 ease-in-out ${isOpen ? "mt-10 translate-y-0" : "-translate-y-full"} md:hidden shadow-lg`}>
         <ul className="flex flex-col items-center">
           <li>
-            <Link to="/" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsOpen(false)}>
+            <Link to="/" className={`block px-4 py-2 hover:bg-gray-200 ${isActive("/") ? "text-pink-500" : ""}`} onClick={() => setIsOpen(false)}>
               Home
             </Link>
           </li>
           <li>
-            <Link to="/products" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsOpen(false)}>
+            <Link to="/products" className={`block px-4 py-2 hover:bg-gray-200 ${isActive("/products") ? "text-pink-500" : ""}`} onClick={() => setIsOpen(false)}>
               Products
             </Link>
           </li>
           <li>
-            <Link to="/about-us" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsOpen(false)}>
+            <Link to="/about-us" className={`block px-4 py-2 hover:bg-gray-200 ${isActive("/about-us") ? "text-pink-500" : ""}`} onClick={() => setIsOpen(false)}>
               About Us
             </Link>
           </li>
           <li>
-            <Link to="/trending" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsOpen(false)}>
+            <Link to="/trending" className={`block px-4 py-2 hover:bg-gray-200 ${isActive("/trending") ? "text-pink-500" : ""}`} onClick={() => setIsOpen(false)}>
               Trending
             </Link>
           </li>
           <li>
-            <Link to="/contact" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setIsOpen(false)}>
+            <Link to="/contact" className={`block px-4 py-2 hover:bg-gray-200 ${isActive("/contact") ? "text-pink-500" : ""}`} onClick={() => setIsOpen(false)}>
               Contact
             </Link>
           </li>

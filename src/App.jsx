@@ -9,6 +9,7 @@ import AboutUs from "./components/Elements/About";
 import ProductDetail from "./components/Elements/ProductDetail";
 import { ProductProvider } from "./components/Elements/ProductContext";
 import TrendingPage from "./components/Elements/Trending";
+import Contact from "./components/Elements/Contact";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/about-us" element={<AboutUs />} />
               <Route path="/trending" element={<TrendingPage />} />
+              <Route path="/contact" element={<Contact />} />
               <Route path="/product/:productId" element={<ProductDetail />} />
               <Route path="/cart" element={<CartPage />} />
             </Routes>
