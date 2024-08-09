@@ -68,7 +68,7 @@ const NavbarHero = () => {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed top-3 left-0 w-full bg-white text-black transition-transform duration-300 ease-in-out ${isOpen ? "mt-10 translate-y-0" : "-translate-y-full"} md:hidden shadow-lg`}>
+      <div className={`fixed top-3 left-0 w-full z-10 bg-white text-black transition-transform duration-300 ease-in-out ${isOpen ? "mt-10 translate-y-0" : "-translate-y-full"} md:hidden shadow-lg`}>
         <ul className="flex flex-col items-center">
           <li>
             <Link to="/" className={`block px-4 py-2 hover:bg-gray-200 ${isActive("/") ? "text-pink-500" : ""}`} onClick={() => setIsOpen(false)}>

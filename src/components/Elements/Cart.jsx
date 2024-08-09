@@ -36,7 +36,7 @@ const CartPage = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {localCartItems.map((item) => (
             <div key={item.id} className="max-w-sm border border-gray-300 rounded overflow-hidden shadow-lg my-4 mx-2 flex flex-col">
-              <div className="">
+              <div className="relative">
                 <img className="w-full h-48 object-cover" src={item.image} alt={item.title} />
                 <FaTrashAlt size={24} className="absolute top-2 right-2 text-red-600 cursor-pointer hover:text-red-900" onClick={() => removeFromCart(item.id)} />
               </div>
